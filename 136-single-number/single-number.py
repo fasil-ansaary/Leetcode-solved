@@ -4,10 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        lst = []
+        val = 0
         for i in nums:
-            if i not in lst:
-                lst.append(i)
-            else:
-                lst.remove(i)
-        return lst.pop()
+            val ^= i
+        return val
