@@ -5,10 +5,10 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        ot = []
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if (nums[i] + nums[j]) == target:
-                    ot.append(i)
-                    ot.append(j)
-                    return ot        
+        i,j = 0,1
+        while i<len(nums):
+            val = target - nums[i]
+            if val in nums[j:]:
+                return i, nums[j:].index(val)+j
+            i += 1
+            j += 1
