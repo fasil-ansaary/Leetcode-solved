@@ -7,8 +7,7 @@ class Solution(object):
         lst = [int(i) for i in s]
         lst.sort(reverse = True)
         fnl_str = str(lst[0])
-        lst = lst[1:]
-        val = ''.join([str(elem) for elem in lst])
+        val = ''.join([str(elem) for elem in lst[1:]])
         val += fnl_str
         return val
         
