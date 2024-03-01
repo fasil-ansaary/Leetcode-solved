@@ -5,9 +5,8 @@ class Solution(object):
         :rtype: str
         """
         lst = [int(i) for i in s]
-        lst.sort()
-        fnl_str = str(lst[-1])
-        lst = lst[::-1]
+        lst.sort(reverse = True)
+        fnl_str = str(lst[0])
         lst = lst[1:]
         val = ''.join([str(elem) for elem in lst])
         val += fnl_str
