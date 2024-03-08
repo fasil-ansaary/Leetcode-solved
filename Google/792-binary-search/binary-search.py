@@ -5,11 +5,6 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        if len(nums) < 2:
-            if nums[0] == target:
-                return 0
-            return -1
-        
         left = 0
         right = len(nums) - 1
         while left <= right:
