@@ -5,13 +5,9 @@ class Solution(object):
         :type k: int
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        if k <= len(nums):
-            temp = nums[:len(nums)-k]
-            del nums[:len(nums)-k]
-            nums += temp
-            return nums
-        while k > 0:
-            temp = nums.pop()
-            nums.insert(0, temp)
-            k -= 1
-        return nums
+        while k > len(nums):
+            k -= len(nums)
+        # nums[-k:]
+        temp = nums[:-k]
+        nums[:-k] = []   
+        nums.extend(temp)
